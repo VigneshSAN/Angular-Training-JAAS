@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-primary">
+            <h4 class="card-title">Add Patients</h4>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student Age</th>
+                </tr>
+
+                <tr *ngFor="let student of studentService.Students">
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.Age }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>
