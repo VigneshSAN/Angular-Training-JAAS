@@ -1,0 +1,38 @@
+<div class="container-fluid mt-2">
+    <div class="card mb-3">
+
+        <div class="card-header bg-primary">
+            <h4 class="card-title">Add Patients</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-lg-5">
+                    <div class="form-group">
+                        <label for="name"> Name</label>
+                        <input type="text" name="name" placeholder="name" [(ngModel)]="studentService.student.name"
+                            class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" name="age" placeholder="age" [(ngModel)]="studentService.student.Age"
+                            class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group mt-4">
+                        <button (click)="addStudents(studentService.student.name, studentService.student.Age)" class="btn btn-primary" *ngIf="studentService.updateFlag == false"> Add Students</button>
+                        <button (click)="updateStudent(studentService.student.id, studentService.student.name, studentService.student.Age)" class="btn btn-primary" *ngIf="studentService.updateFlag == true"> Update Students</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

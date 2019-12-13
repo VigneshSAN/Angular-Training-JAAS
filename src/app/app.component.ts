@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StudentService } from './Services/student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,52 +10,16 @@ import { StudentService } from './Services/student.service';
 
 export class AppComponent {
 
-
-  constructor(public studentService: StudentService) {
-
-  }
-
-  ngOnInit() {
-  }
-
-  ngOnDestroy() {
+  constructor(public router: Router) {
 
   }
 
-  addStudents(pname, page) {
-
-    let student: any = {
-      id: this.studentService.Students.length + 1,
-      name: pname,
-      Age: page
-    }
-
-    this.studentService.Students.push(student);
-
-    this.flush();
+  navigateStudentList() {
+    this.router.navigate(['/student-list'])
   }
 
-  updateStudent(id, name, age) {
-
-    for (let i = 0; i < this.studentService.Students.length; i++) {
-
-      if (this.studentService.Students[i].id == id) {
-        this.studentService.Students[i].name = name;
-        this.studentService.Students[i].Age = age;
-
-        this.studentService.updateFlag = false;
-        this.flush();
-      }
-
-    }
-  }
-
-  flush() {
-    this.studentService.student = {
-      id: '',
-      name: '',
-      Age: ''
-    }
+  navigateAddStudent() {
+    this.router.navigate(['/add-student'])
   }
 
 }

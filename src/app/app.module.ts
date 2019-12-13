@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
 
 import { FormsModule } from '@angular/forms';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentComponent
+    StudentComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
